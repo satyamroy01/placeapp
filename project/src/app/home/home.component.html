@@ -1,0 +1,265 @@
+<!------------------------------- should have a <app-header> -------------------------------->
+<app-header></app-header>
+<!----------------------- should have a <section> with a carousel and a flexbox grid of aboutUs and sponsors------------------>
+<section class="sectionCarousel">
+  <div id="myCarousel" class="carousel carousel-fade slide" data-ride="carousel" data-interval="3000">
+		<div class="carousel-inner" role="listbox">
+			<div class="item active background a"></div>
+			<!-- <div class="item background b"></div>
+			<div class="item background c"></div> -->
+		</div>
+	</div>
+
+	<div class="covertext">
+		<div class="col-lg-10" style="float:none; margin:0 auto;">
+			<h1 class="title">JOBStudio</h1>
+			<h3 class="subtitle">Kickstart your Career with us!</h3>
+      <h4 class="subtitle"><b>Search -> Find -> Apply</b></h4>
+		</div>
+		<div class="col-xs-12 explore">
+			<a routerLink="/search"><button type="button" class="btn btn-lg explorebtn">Search Jobs</button></a>
+		</div>
+	</div>
+
+</section>
+  
+  <section class="sectionSearch">
+  <div class="slider-area ">
+    <!-- Mobile Menu -->
+    <div class="slider-active">
+        <div class="single-slider slider-height d-flex align-items-center" data-background="../../assets/images/h1_hero.jpg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-9 col-md-10">
+                        <div class="hero__caption">
+                            <h1 id="captionHero">Find the most exciting startup jobs</h1>
+                        </div>
+                    </div>
+                </div>
+                <!-- Search Box -->
+                <div class="row" id="searchBox">
+                    <div class="col-xl-8">
+                        <!-- form -->
+                        <div class="container">
+                          <div class="row">
+                            <div class="col-md-3">
+                              <select name="" id="" style="width: 100%; border-radius: 5px;min-height: 48px;"
+                                [(ngModel)]="_selectedCountry" (ngModelChange)="getLocations()">
+                                <option value="">Choose country</option>
+                                <option *ngFor="let country of countries" [ngValue]="country.name">{{country.name}}</option>
+                  
+                              </select>
+                            </div>
+                            <div class="col-md-3">
+                              <select name="" id="" style="width: 100%; border-radius: 5px;min-height: 48px;"
+                              [(ngModel)]="_selectedLocation">
+                                <option value="">Choose location</option>
+                                <option *ngFor="let location of locationsForSelectedCountries" [ngValue]="location">{{location}}</option>
+                              </select>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="row">
+                                <div class="col-md-10">
+                                  <mat-expansion-panel >
+                                    <mat-expansion-panel-header>
+                                      <mat-panel-title>Categories</mat-panel-title>
+                  
+                  
+                                    </mat-expansion-panel-header>
+                                    <section id="categoriesSection" style="max-height: 350px; overflow-y: auto;">
+                                      <div *ngFor="let category of jobcategories; let i=index" >
+                                        <input id={{category.categoryname}} [(checked)]="category.selected" type="checkbox"
+                                          (change)="selectCategory(i)">
+                                        <label for={{category.categoryname}}>{{category.categoryname}}</label>
+                                      </div>
+                  
+                  
+                                    </section>
+                  
+                                  </mat-expansion-panel>
+                                </div>
+                                <div class="col-md-2">
+                                  <button class="btn btn-primary" style="min-height: 48px;border-radius: 10px;" (click)="search()">Search</button>
+                                </div>
+                              </div>
+                  
+                  
+                  
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<section>
+  
+</section>
+  <!-- <section>
+  <div class="hero-section jumbotron-fluid">
+    <div class="container">
+      <div class="row">
+        <div
+          style="margin-top:50px; width: 100%; display: flex;flex-direction: column;align-items: center;font-size: 1.8rem;">
+          <h1>Find your dream Job</h1>
+          <p>Job employment & future career oppurtunities</p>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <select name="" id="" style="width: 100%; border-radius: 5px;min-height: 48px;"
+              [(ngModel)]="_selectedCountry" (ngModelChange)="getLocations()">
+              <option value="">Choose country</option>
+              <option *ngFor="let country of countries" [ngValue]="country.name">{{country.name}}</option>
+
+            </select>
+          </div>
+          <div class="col-md-3">
+            <select name="" id="" style="width: 100%; border-radius: 5px;min-height: 48px;"
+            [(ngModel)]="_selectedLocation">
+              <option value="">Choose location</option>
+              <option *ngFor="let location of locationsForSelectedCountries" [ngValue]="location">{{location}}</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <div class="row">
+              <div class="col-md-10">
+                <mat-expansion-panel >
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>Categories</mat-panel-title>
+
+
+                  </mat-expansion-panel-header>
+                  <section id="categoriesSection" style="max-height: 350px; overflow-y: auto;">
+                    <div *ngFor="let category of jobcategories; let i=index" >
+                      <input id={{category.categoryname}} [(checked)]="category.selected" type="checkbox"
+                        (change)="selectCategory(i)">
+                      <label for={{category.categoryname}}>{{category.categoryname}}</label>
+                    </div>
+
+
+                  </section>
+
+                </mat-expansion-panel>
+              </div>
+              <div class="col-md-2">
+                <button class="btn btn-primary" style="min-height: 48px;" (click)="search()">Search</button>
+              </div>
+            </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="d-block w-100" src="https://blog.hubspot.com/hubfs/Site%20owner%20choosing%20parallax%20WordPress%20theme%20for%20site.jpg" alt="First slide">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h1><b>Find A Job</b></h1>
+                    <h3>Simple, fast and efficient.</h3>
+                  </div>
+                </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="https://image.freepik.com/free-photo/business-people-wearing-face-mask-meeting-discussing-brainstorming-ideas-investment-office-during-coronavirus_189498-1151.jpg" alt="Second slide">
+                <div class="carousel-caption d-none d-md-block">
+                  <h1><b>The Easiest Way to Get Your New Job</b></h1>
+                  <h3>Find jobs, create trackable resumes and enrich your applications.</h3>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="
+                https://350796-1173560-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2020/04/JobPortal.jpg
+                " alt="Third slide">
+                <div class="carousel-caption d-none d-md-block">
+                  <h1><b>Discover a new career designed for you. </b></h1>
+                  <h3>Search over 3,875 open position for you.
+                  </h3>
+                </div>
+              </div>
+            </div>
+
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div> -->
+<!-- should have a <app-dashboard> -->
+<app-dashboard></app-dashboard>
+
+
+<!------------------------------------------Login part ------------------------------------------------>
+<div>
+  <section class="login-sec parallax-section" id="login">
+    <div class="container"  *ngIf="!isLoggedIn">
+      <div class="row">
+        <div class="col-md-4">
+          <h1><b>Your Dream job is waiting..</b></h1>
+        </div>
+        <div class="avatar">
+          <img src="https://cdn.dribbble.com/users/1664576/screenshots/5509494/webp.net-gifmaker__1_.gif" alt="Avatar">
+        </div>
+        <div class="column">
+          <h3><b>Sign up now & start using Place APP for free</b></h3>
+          <div class="row">
+            <div class="col-md-4">
+              <a mat-raised-button color="accent" (click)="showRegister()"><i class="fa fa-sign-in"></i> Register </a>
+            </div>
+            <div class="col-md-4">
+              <a mat-raised-button color="primary" (click)="showLogin()"><i class="fa fa-fw fa-user"></i>Login </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-------------------------------------- About------------------------------------------------->
+<section class="about-sec parallax-section" id="about">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <h2>About us<br>
+        </h2>
+      </div>
+      <div class="col-md-4">
+        <p>Place APP is a global online employment solution for people seeking jobs and the employers who need great
+          people. We've been doing this for more than 20 years, and have expanded from our roots as a "job board" to a
+          global provider of a full array of job seeking, career management, recruitment and talent management products
+          and services.</p>
+        <p>At the heart of our success and our future is innovation: We are changing the way people think about work,
+          and we're helping them actively improve their lives and their workforce performance with new technology, tools
+          and practices</p>
+      </div>
+      <div class="col-md-4">
+        <p>We help employers find not only the best quality candidates, but more of them. To streamline the process so
+          you can save time and money. And to help you make smarter decisions to improve your ROI. Basically, we want to
+          give you the ability to hire like no one else can.</p>
+        <p><a href="#" class="btn btn-transparent-white btn-capsul">Explore More</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+<!--------------------------------------- should have a <app-footer> ------------------------------------------------------->
+<app-footer></app-footer>

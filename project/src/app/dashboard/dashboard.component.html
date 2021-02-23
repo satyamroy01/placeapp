@@ -1,0 +1,222 @@
+<!-- <button class="btn btn-success" (click)="getJobDataInDashboard()">Get job details >></button> -->
+<!-- <button (click)="showDetails()">cllick</button> -->
+<section id="browsecaptionSection" >
+    <div class="browseCaption">
+        <h2 id="browse">Browse Jobs from all across the world</h2>
+    </div>
+
+</section>
+<section class="container" >
+    
+    <div class="row">
+        <div class="col">
+            <mat-card class="trendingJobCard" *ngIf="trendingJobResult" style="width: 100%;">
+                <div class="row">
+                    <div class="col-10">
+                        <div class="trendingJob">
+                            <div >
+                                <p class="card-text" id="TcardJobName"><i id="jobIcon" class="fa fa-fw fa-briefcase"></i>{{trendingJobResult?.name}}</p>
+                                <p class="card-text" id="TcardCompanyName"><i class="fa fa-fw fa-building"></i>{{trendingJobResult?.company.name}}</p>
+                                <p class="card-text" id="TcardLocation"><i class="fa fa-fw fa-laptop"></i>{{trendingJobResult?.locations[0].name}}</p>
+                                <p class="card-text" id="TcardLevel"><i class="fa fa-fw fa-level-up"></i>{{trendingJobResult?.levels[0].name}}</p>
+                                <p class="card-text" id="TcardPublishedDate"><i class="fa fa-fw fa-calendar"></i>{{trendingJobResult?.publication_date}}</p>
+                
+                            </div>
+                            
+                            
+                            
+                        </div>
+                    </div>
+                <div class="col-2">
+                    <div class="TrendingJobIcon">
+                        <p id="trendText">#1 on Trending</p>
+                    </div>
+                </div>
+
+                </div>
+                
+        </mat-card>
+
+        </div>
+        
+
+    </div>
+    
+</section>
+<section class="container-fluid">
+    <div class="row">
+        <!-- <div class="col">
+            <form class="form-inline my-2 my-lg-0" [formGroup]="jobSearchForm" (ngSubmit)="getJobDataInDashboard()">
+                <input formControlName="searchval" class="form-control mr-sm-2" type="search" placeholder="Enter Category" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
+        </div> -->
+        <!-- <div class="col">
+            <section class="matFilterModule" id="findjobs">
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>Categories</mat-panel-title>
+
+
+                    </mat-expansion-panel-header>
+                    <section id="categoriesSection">
+                        <mat-card *ngFor="let category of jobcategories; let i=index" id="categoryCard">
+
+                            <input id={{category.categoryname}} [(checked)]="category.selected" type="checkbox"
+                                (change)="selectCategory(i)">
+                            <label for={{category.}}>{{category.categoryname}}</label>
+                        </mat-card>
+
+
+                    </section>
+                    <mat-action-row>
+                        <button mat-button color="primary" (click)="getJobDataInDashboard()">Search</button>
+                    </mat-action-row>
+
+                </mat-expansion-panel>
+
+               
+            </section>
+        </div> -->
+
+    </div>
+    
+    <div class="container">
+        <!-- <h2 id="browse">Browse Jobs from all across the world</h2> -->
+        <div class="row">
+            
+            <div class="col-xl-6 col-lg-6 pt-5 colheight" id="jobGrid"
+                *ngFor="let job of jobdata | paginate: {itemsPerPage:itemsperpage, currentPage: q, totalItems: totalItems}">
+                <div class="card mb-4 box-shadow ">
+                    <div class="card-body" id="cardShadow">
+                        <!-- <p>{{job.id}}</p> -->
+                        <div class="row" id="cardContent">
+                            <div class="col-10" id="jobDetailsSection">
+                                <p class="card-text" id="cardJobName">{{job.name}}</p>
+                                <p class="card-text" id="cardCompanyName">{{job.company.name}}</p>
+                                <p class="card-text" id="cardLocation">{{job.locations[0].name}}</p>
+                                <p class="card-text" id="cardLevel">{{job.levels[0].name}}</p>
+                                <p class="card-text" id="cardPublishedDate">{{job.publication_date}}</p>
+
+
+                            </div>
+                            <div class="col-2">
+                                <div>
+                                    <div class="btn-group" id="applyInfo">
+                                        <div class="row">
+                                            <mat-icon [ngStyle]="{'color':'lightblue'}" (click)="showJobDetails(job.id)">info
+                                            </mat-icon>
+                                            <!-- <button class="btn btn-outline-success" (click)="showJobDetails()">Details</button> -->
+                                            <div *ngIf="isLoggedIn;else notLoggedInFav">
+
+                                                <div *ngIf="myFavJobArray?.length > 0; else newUserFav">
+                                                    <mat-icon id="favIconOutline" (click)="addFav(job)" *ngIf="!isJobMarkedAsFav(job.id);else fav">favorite_outline</mat-icon>
+                                                    <ng-template #fav>
+                                                        <mat-icon id="favIcon" (click)="removeFav(job)" [ngStyle]="{'color':'red'}">favorite</mat-icon>
+                                                    </ng-template>
+    
+                                                </div>
+                                                <ng-template #newUserFav>
+
+                                                    <mat-icon id="favIconOutlineNewUser" (click)="addFav(job)">favorite_outline</mat-icon>
+    
+                                                </ng-template>
+
+                                            </div>
+                                            <ng-template #notLoggedInFav>
+
+                                                <mat-icon id="favIconOutlineGuestUser" (click)="showPopupGuest()">favorite_outline</mat-icon>
+
+                                            </ng-template>
+
+                                            
+                                            
+                                            <!-- <button class="btn btn-outline-success">Add to Favorites</button> -->
+
+                                        </div>
+
+
+
+                                    </div>
+                                    <!-- <small class="text-muted">9 mins</small> -->
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                        <div class="row">
+                            
+                               
+
+                                    <div style="width:100%;padding-left:15px;margin-top: 5px;">
+                                        <!-- <div class="countContainer">
+                                            <p class="cardCount-text">{{job.count}} people have applied for this job</p>
+                                            
+                                        </div> -->
+                                        <div class="applyBtnDiv">
+                                            <div *ngIf="isLoggedIn;else notLoggedInApply">
+                                            <button class="btn btn-outline-success" (click)="applyJob(job)" 
+                                                id="applyBtn" *ngIf="!isJobApplied(job.id);else other_content">Apply</button>
+                                                <ng-template #other_content>
+                                                    <span>Already applied</span>
+                                                </ng-template>
+                                            </div>
+                                            <ng-template #notLoggedInApply>
+                                                <button class="btn btn-outline-success" (click)="showPopupGuest()" 
+                                        id="applyBtnGuestUser">Apply</button>
+
+                                            </ng-template>
+                                        </div>
+        
+                                    </div>
+    
+                               
+                                <!-- <ng-template #newUser>
+                                    <div style="width:100%;padding-left:15px;margin-top: 5px;">
+                                    <div class="countContainer">
+                                        <p class="cardCount-text">{{job.count}} people have applied for this job</p>
+                                        
+                                    </div>
+                                    <div class="applyBtnDiv">
+                                        <button class="btn btn-outline-success" (click)="applyJob(job)" 
+                                            id="applyBtnNewUser">Apply</button>
+                                            
+                                        
+                                    </div>
+                                </div>
+                                </ng-template> -->
+
+                            
+                            <!-- <ng-template #notLoggedIn>
+                                <div style="width:100%;padding-left:15px;margin-top: 5px;">
+                                <div class="countContainer">
+                                    <p class="cardCount-text">{{job.count}} people have applied for this job</p>
+                                    
+                                </div>
+                                <div class="applyBtnDiv">
+                                    <button class="btn btn-outline-success" (click)="showPopupGuest()" 
+                                        id="applyBtnGuestUser">Apply</button>
+                                        
+                                    
+                                </div>
+                            </div>
+                            </ng-template> -->
+
+
+                            
+                            
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <pagination-controls (pageChange)="q =$event; getJobDataInDashboard()"></pagination-controls>
+    </div>
+    <!-- /.row -->
+
+</section>

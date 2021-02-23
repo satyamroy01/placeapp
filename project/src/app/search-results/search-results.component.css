@@ -1,0 +1,86 @@
+.container-fluid{
+    text-align: center;
+    padding-top: 20px;
+}
+#jobGrid{
+    margin-top: 40px;
+}
+ 
+.imgheight{
+    height: 350px;
+}
+#cardShadow{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#cardJobName{
+    font-weight: bolder;
+    font-size: large;
+
+}
+#cardCompanyName{
+    font-weight: bold;
+    font-size: medium;
+}
+/* #findjobs{
+    margin: 50px;
+} */
+#categoriesSection{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#categoryCard{
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    margin-right: 5px;
+    margin-top: 10px;
+}
+.card-body{
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+      transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+  padding: 14px 80px 18px 36px;
+  cursor: pointer;
+}
+
+.card-body:hover{
+    transform: scale(1.05);
+}
+#jobDetailsSection{
+    text-align: left;
+}
+#cardContent{
+    display: flex;
+    flex-direction: row;
+
+}
+#applyInfo{
+    display: flex;
+    flex-direction: column;
+}
+#favIconOutline, #favIconOutlineNewUser, #favIconOutlineGuestUser{
+    margin-left: 10px;
+}
+#favIcon{
+    margin-left: 10px;
+}
+.countContainer{
+    float:left;
+}
+.applyBtnDiv{
+    float:right
+}
+#applyBtn{
+    float:right
+}
+.cardCount-text{
+    color: #aaa;
+}
+@media only screen and (max-device-width: 380px) {
+    #SfavIcon,#SfavIconOutline,#SfavIconOutlineGuestUser,#SfavIconOutlineNewUser {
+     margin-left: 0px;
+    }
+  }

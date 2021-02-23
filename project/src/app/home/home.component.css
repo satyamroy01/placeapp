@@ -1,0 +1,319 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
+@import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
+#card {
+	margin: 5vw;
+	padding-left: 15vw;
+	padding-right: 15vw;
+}
+.sectionCarousel{
+	margin-top: 50px;
+}
+  
+.carousel .background {
+	background-position: center center;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	height: 700px;
+  }
+  
+  @media (max-width:991px) {
+	.carousel .background {
+	  background-size: cover; /* To make the background image looks good */
+	}
+  }
+  
+  .carousel .background.a {
+	background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../assets/images/h1_hero.jpg");
+  }
+  
+  /* .carousel .background.b {
+	background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../assets/images/home-blog1.jpg");
+  }
+  
+  .carousel .background.c {
+	background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../assets/images/home-blog2.jpg");
+  } */
+  
+  .carousel-fade .carousel-inner .item {
+	opacity: 0;
+	transition: opacity 0.5s; /* The 0.5s describes the duration to make the opacity from 0 to 1 */
+  }
+  
+  .carousel-fade .carousel-inner .active {
+	opacity: 1;
+  }
+  
+  /* CSS Hack to trigger GPU for smooth transition */
+  @media all and (transform-3d),
+  (-webkit-transform-3d) {
+	.carousel-fade .carousel-inner > .item.next,
+	.carousel-fade .carousel-inner > .item.active.right {
+	  opacity: 0;
+	  -webkit-transform: translate3d(0, 0, 0);
+	  transform: translate3d(0, 0, 0);
+	}
+	.carousel-fade .carousel-inner > .item.prev,
+	.carousel-fade .carousel-inner > .item.active.left {
+	  opacity: 0;
+	  -webkit-transform: translate3d(0, 0, 0);
+	  transform: translate3d(0, 0, 0);
+	}
+	.carousel-fade .carousel-inner > .item.next.left,
+	.carousel-fade .carousel-inner > .item.prev.right,
+	.carousel-fade .carousel-inner > .item.active {
+	  opacity: 1;
+	  -webkit-transform: translate3d(0, 0, 0);
+	  transform: translate3d(0, 0, 0);
+	}
+  }
+  /* CSS Hack to trigger GPU for smooth transition */
+  
+  .covertext {
+	position: absolute; /* To make the div to be place anywhere. It is out of the document flow */
+	top: 200px; /* The distance between the div with the top of document */
+	left: 0px; /* Make the div full width */
+	right: 0px; /* Make the div full width */
+	margin-top: 150px;
+  }
+  
+  .title {
+	font-family: Verdana;
+	font-weight: 600;
+	font-size: 60px;
+	color: #ffffff;
+	text-align: center;
+  }
+  
+  .subtitle {
+	font-family: Verdana;
+	font-size: 23px;
+	color: #ffffff;
+	text-align: center;
+  }
+  
+  .explore {
+	text-align: center;
+	margin-top: 10px;
+  }
+  
+  .explore .btn-lg,
+  .explore .btn-lg:hover {
+	border-radius: 30px;
+	padding: 15px 25px;
+	font-size: 22px;
+	background-image: none;
+	background-color: #FF4000;
+	border-color: #FF4000;
+	color: #ffffff;
+  }
+  
+  .btn,
+  .btn:hover {
+	border-radius: 0px;
+	background-image: none;
+	background-color: #FF4000;
+	border-color: #FF4000;
+	color: #ffffff;
+	margin-bottom: 20px;
+	box-shadow: none;
+	outline: none;
+  }
+  
+  .btn:focus,
+  .btn:active:focus,
+  .btn.active:focus,
+  .btn.focus,
+  .btn:active.focus,
+  .btn.active.focus {
+	color: #ffffff;
+	outline: none;
+  }
+
+.flex-container {
+	display: flex;
+	flex-direction: column;
+	font-size: 30px;
+	text-align: center;
+}
+
+.hero-section {
+	color: white;
+	background-image: url("../../assets/images/homepage-bg-2.jpg");
+	
+	 /* Add the blur effect */
+	 filter: blur(8px);
+	 -webkit-filter: blur(8px);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vh;
+	
+}
+.hero-section .container {
+	padding-top: 100px !important;
+}
+
+.my-select-panel-class {
+	width: 20px;
+	max-width: 20px;
+	background-color: red;
+	font-size: 10px;
+}
+
+mat-form-field {
+	background-color: rgba(255, 255, 255,0.5);
+	padding-left: 1rem;
+}
+
+.flex-item-left {
+	background-color: #f1f1f1;
+	padding: 10px;
+	flex: 50%;
+}
+
+/* .flex-item-right {
+    background-color: rgb(241, 241, 249);
+    padding: 10px;
+    flex: 50%;
+  } */
+
+/* Responsive layout - makes a one column-layout instead of two-column layout */
+@media (max-width: 800px) {
+	.flex-container {
+		flex-direction: column;
+	}
+}
+.sectionSearch{
+	background-color: #EAEDFF;
+}
+.single-slider slider-height d-flex align-items-center{
+	
+		width: 965px;
+		position: relative;
+		left: 0px;
+		top: 0px;
+		z-index: 999;
+		opacity: 1;
+	
+}
+#searchBox{
+	margin-bottom: 20px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px){
+	.slider-area .hero__caption h1 {
+		font-size: 50px;
+	}
+
+}
+
+
+.slider-area .hero__caption h1 {
+    font-size: 80px;
+    font-weight: 900;
+    margin-bottom: 78px;
+    color: #28395a;
+    line-height: 1.2;
+}
+
+/* LOGIN SECTION
+-------------------------------------------------- */
+.avatar img {
+	width: 50%;
+}
+.login-sec {
+	background-color: white;
+	background-size: cover;
+	color: rgb(8, 8, 8);
+	position: relative;
+}
+.login-sec:before {
+	content: " ";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: rgba(240, 232, 232, 0.11);
+	top: 0;
+	left: 0;
+}
+.login-sec h2 {
+	font-size: 25px;
+	font-weight: 800;
+	margin-top: 25%;
+}
+.login-sec h2 small {
+	display: block;
+	font-size: 10px;
+	margin-bottom: 15px;
+	padding-left: 10px;
+}
+
+.login-sec p {
+	font-size: 10px;
+}
+.btn-transparent-black {
+	border: 2px solid rgb(89, 138, 109);
+	color: rgb(29, 27, 27);
+}
+.btn-transparent-:hover,
+.btn-transparent-white:focus {
+	background: rgb(250, 247, 247);
+	color: #0296ff04;
+}
+
+/* ABOUT SECTION
+-------------------------------------------------- */
+.about-sec {
+	background: url("http://www.elsa-belgium.org/wp-content/uploads/2014/12/parallax-background-girl-1.jpg") no-repeat
+		center center;
+	background-size: cover;
+	color: rgb(5, 5, 5);
+	position: relative;
+}
+.about-sec:before {
+	content: " ";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: rgba(250, 251, 252, 0.568);
+	top: 0;
+	left: 0;
+}
+.about-sec h2 {
+	font-size: 55px;
+	font-weight: 800;
+	margin-top: 25%;
+}
+.about-sec h2 small {
+	display: block;
+	font-size: 24px;
+	margin-bottom: 15px;
+	padding-left: 10px;
+}
+.about-sec parallax-section {
+	max-width: 600px;
+	margin: 5em auto;
+	text-align: center;
+	max-height: 600px;
+}
+.about-sec p {
+	padding-top: 7em auto;
+	font-size: 17px;
+}
+.btn-transparent-white {
+	border: 3px solid #fff;
+	color: #fff;
+}
+.btn-transparent-white:hover,
+.btn-transparent-white:focus {
+	background: #fff;
+	color: #0297ff;
+}
+
+
+@media only screen and (max-device-width: 680px) {
+    #captionHero {
+      font-size: xx-large;
+    }
+  }

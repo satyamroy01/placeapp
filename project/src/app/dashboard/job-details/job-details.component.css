@@ -1,0 +1,10 @@
+#jobTitle{
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
+.buttonRow{
+    margin-top: 10px;
+    padding: 5px;
+    float: right;
+}

@@ -1,0 +1,58 @@
+2021-02-05 07:28:13 [restartedMain] INFO  c.p.u.UserServiceApplication -
+				Starting UserServiceApplication using Java 14.0.2 on A020LBOM with PID 3004 (D:\bootcamp\PlaceAppProject\placeappproject\UserService\target\classes started by U92477 in D:\bootcamp\PlaceAppProject\placeappproject\UserService)
+2021-02-05 07:28:13 [restartedMain] INFO  c.p.u.UserServiceApplication -
+				No active profile set, falling back to default profiles: default
+2021-02-05 07:28:13 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -
+				Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-05 07:28:13 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -
+				Finished Spring Data repository scanning in 16 ms. Found 1 JPA repository interfaces.
+2021-02-05 07:28:14 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer -
+				Tomcat initialized with port(s): 9095 (http)
+2021-02-05 07:28:14 [restartedMain] INFO  o.a.catalina.core.StandardService -
+				Starting service [Tomcat]
+2021-02-05 07:28:14 [restartedMain] INFO  o.a.catalina.core.StandardEngine -
+				Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-02-05 07:28:14 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -
+				Initializing Spring embedded WebApplicationContext
+2021-02-05 07:28:14 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -
+				Root WebApplicationContext: initialization completed in 651 ms
+2021-02-05 07:28:14 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper -
+				HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-05 07:28:14 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-8 - Starting...
+2021-02-05 07:28:14 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-8 - Start completed.
+2021-02-05 07:28:14 [restartedMain] INFO  org.hibernate.dialect.Dialect -
+				HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2021-02-05 07:28:14 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator -
+				HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-05 07:28:14 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -
+				Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-05 07:28:14 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer -
+				LiveReload server is running on port 35729
+2021-02-05 07:28:14 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration -
+				spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-05 07:28:14 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping -
+				Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-02-05 07:28:14 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor -
+				Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-05 07:28:14 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer -
+				Tomcat started on port(s): 9095 (http) with context path ''
+2021-02-05 07:28:14 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper -
+				Context refreshed
+2021-02-05 07:28:14 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper -
+				Found 1 custom documentation plugin(s)
+2021-02-05 07:28:14 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner -
+				Scanning for api listing references
+2021-02-05 07:28:14 [restartedMain] INFO  c.p.u.UserServiceApplication -
+				Started UserServiceApplication in 1.349 seconds (JVM running for 730.18)
+2021-02-05 07:28:14 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener -
+				Condition evaluation unchanged
+2021-02-05 07:28:17 [Thread-40] INFO  o.s.s.c.ThreadPoolTaskExecutor -
+				Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-05 07:28:17 [Thread-40] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -
+				Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-02-05 07:28:17 [Thread-40] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-8 - Shutdown initiated...
+2021-02-05 07:28:17 [Thread-40] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-8 - Shutdown completed.

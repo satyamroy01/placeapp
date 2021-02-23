@@ -1,0 +1,76 @@
+<!-- <div fxLayout="row" fxLayoutAlign="space-between"> -->
+  <app-header></app-header>
+  <div align="center">
+  <form [formGroup]="registerform" class="example-form" (ngSubmit)="register(registerform.value)">
+    <mat-card>
+      <mat-card-content>
+        <div class="header">
+          <h2>Register Here !!</h2>
+          <p>Please fill in this form to create an account.</p>
+        </div>
+            <div>
+              <mat-form-field class="full-width">
+                  <mat-label> First Name</mat-label>
+                  <input matInput formControlName="firstName"  placeholder="First Name" value="">
+              </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field class="full-width">
+                  <mat-label>Last Name</mat-label>
+                  <input matInput formControlName="lastName"  placeholder="Last Name" value="">
+              </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="full-width">
+                  <mat-label>Enter Email</mat-label>
+                  <input matInput formControlName="emailId"  placeholder="xyz@stackroute.in" value="">
+                  <mat-error *ngIf="registerform.get('emailId').invalid && registerform.get('emailId').touched && registerform.get('emailId').errors.required ">
+                    username cannot be <strong>empty</strong>
+                  </mat-error>
+                </mat-form-field>
+            </div>
+            <!-- <div>
+              <mat-form-field class="full-width">
+                  <mat-label>UserID</mat-label>
+                  <input matInput formControlName="userId"  placeholder="unique id" value="">
+              </mat-form-field>
+            </div> -->
+  
+            <div>
+              <mat-form-field class="full-width">
+                <mat-label>Contact</mat-label>
+                  <input matInput formControlName="contact"  placeholder="Minimum 10 digits" value="contact">
+                    <mat-error *ngIf="registerform.get('contact').invalid && registerform.get('contact').touched && registerform.get('contact').errors.required ">
+                      Contact number cannot be <strong>empty</strong>
+                    </mat-error>
+                    <mat-error *ngIf="registerform.get('contact').invalid && registerform.get('contact').touched && registerform.get('contact').errors.minlength && !registerform.get('contact').errors.required ">
+                      Contact number should be more than <strong>10</strong> characters
+                    </mat-error>
+              </mat-form-field>
+            </div>
+              
+            <div>
+              <mat-form-field class="full-width">
+                <mat-label>Password</mat-label>
+                <input matInput formControlName="password" placeholder="Minimum 6 characters" type="password">
+                <mat-error *ngIf="registerform.get('password').invalid && registerform.get('password').touched && registerform.get('password').errors.required ">
+                  password cannot be <strong>empty</strong>
+                </mat-error>
+                <mat-error *ngIf="registerform.get('password').invalid && registerform.get('password').touched && registerform.get('password').errors.minlength && !registerform.get('password').errors.required ">
+                  Password should be more than <strong>6</strong> characters
+                </mat-error>
+              </mat-form-field>
+            </div>
+              <button mat-button type="submit" [disabled]="!registerform.valid"class="btn btn-primary"><i class="fa fa-sign-in"></i> Sign Up</button>
+              <div>
+                <div class="section mt-3">
+                  <p>--------------------------------------------------------------</p>
+                </div>
+                <p>Already a Member?</p>
+                <button mat-button type="button" (click)="showLogin()"class="button btn-primary"><i class="fa fa-fw fa-user"></i>Login </button>
+            </div>
+          </mat-card-content>
+    </mat-card>
+  </form>
+  </div>
+  <app-footer></app-footer>    

@@ -1,0 +1,99 @@
+.example-form {
+	min-width: 150px;
+	max-width: 600px;
+	width: 100%;
+  }
+  
+  .full-width {
+	width: 100%;
+  }
+  mat-card{
+  max-width: 600px;
+  margin: 5em auto;
+  text-align:center;
+  max-height:800px;
+  
+  }
+  #cardShadow{
+	  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  .header{
+  text-align:center;
+  }
+  .full-width{
+  width:80%;
+  }
+  .forgot-password{
+  padding-top:0px;
+  }
+  .email-input{
+  padding-top:10px;
+  }
+  
+  .aLink{
+  float: right;
+  padding-right:60px;
+  text-decoration:none;
+  }
+  a.navbar-brand {
+	  color: rgb(172, 84, 84);
+	  font-size: 26px;
+	  font-weight: 800;
+	  padding: 5px 0 0 10px;
+	  text-transform: uppercase;
+  }
+  a.navbar-brand {
+	  color:  #db4a39;
+  }
+  a.navbar-brand span {
+	  color:#3B5998;
+  }
+  
+	.section{
+	  color:rgb(217, 222, 224);
+	}
+	* {box-sizing: border-box;}
+	
+	.input-container {
+	  display: -ms-flexbox; /* IE10 */
+	  display: flex;
+	  width: 100%;
+	  margin-bottom: 15px;
+	}
+	
+	
+	
+	.input-field {
+	  width: 100%;
+	  padding: 10px;
+	  outline: none;
+	}
+	
+	.input-field:focus {
+	  border: 2px solid dodgerblue;
+	}
+	
+	/* Set a style for the submit button */
+	.btn {
+	  padding: 15px 20px;
+	  border: none;
+	  cursor: pointer;
+	  width: 80%;
+	  opacity: 0.9;
+	}
+	.button{
+	  background-color:#db396f;
+	  color: white;
+	  padding: 15px 20px;
+	  border: none;
+	  cursor: pointer;
+	  width: 80%;
+	  opacity: 0.9;
+	}
+	.header h2{
+	  color:rgb(21, 123, 170);
+	}
+	.btn:hover {
+	  opacity: 1;
+	}
+	

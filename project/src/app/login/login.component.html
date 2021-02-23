@@ -1,0 +1,58 @@
+<!--------------------------- Should have a <app-header>-------------------------------------------- -->
+
+  <app-header></app-header>
+
+  <!------------------------------Login form------------------------------------------------------------->
+  <div align="center">
+  <form [formGroup]="userform" class="example-form" (ngSubmit)="login(userform.value)">
+    <mat-card>
+      <mat-card-content>
+        <div class="header">
+          <!-- <h1>LOGIN</h1>
+          <h2> Use the form below and we'll reach out to you</h2>
+          <div class="section mt-3">
+            <p>--------------------------------------------------------------</p>
+          </div> -->
+          <h2>Login Here !!</h2>
+        </div>
+  
+        <div>
+          <mat-form-field class="full-width"appearance="outline">
+            <mat-label>Email</mat-label>
+              <input matInput formControlName="emailId" placeholder="Your Email Id here.." type="email">
+                <mat-error *ngIf="userform.get('emailId').invalid && userform.get('emailId').touched && userform.get('emailId').errors.required ">
+                  username cannot be <strong>empty</strong>
+                </mat-error>
+            </mat-form-field>
+      </div>
+  
+        <div>
+          <!-- <span class="aLink">Forgot Password?</span> -->
+            <mat-form-field class="full-width"appearance="outline">
+              <mat-label>Password</mat-label>
+                <input matInput formControlName="password" name="pass" placeholder="Minimum 6 characters" type="password">
+                  <mat-error *ngIf="userform.get('password').invalid && userform.get('password').touched && userform.get('password').errors.required ">
+                    password cannot be <strong>empty</strong>
+                  </mat-error>
+                  <mat-error *ngIf="userform.get('password').invalid && userform.get('password').touched && userform.get('password').errors.minlength && !userform.get('password').errors.required ">
+                    Password should be more than <strong>6</strong> characters
+                  </mat-error>
+              </mat-form-field>
+        </div>
+  
+        <button mat-button type="submit" [disabled]="!userform.valid"class="btn btn-info"><i class="fa fa-sign-in"></i> Sign In</button>
+        <div class="section mt-3">
+          <p>--------------------------------------------------------------</p>
+        </div>
+        <div>
+          <p>Don't have an account?</p>
+          <button mat-button type="button" (click)="showRegister()"class="button btn-primary"><i class="fa fa-sign-in"></i> Register </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </form>
+  </div>
+  
+  <!------------------------------------ should have a <app-footer> ------------------------------------------>
+  <app-footer></app-footer>
+  

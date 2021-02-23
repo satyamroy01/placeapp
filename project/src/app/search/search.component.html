@@ -1,0 +1,72 @@
+<app-header></app-header>
+<section>
+
+    <div class="jumbotron">
+        <div class="headingSearch">
+            
+            <div class="container">
+                <div class="row">
+                  <div
+                    style="margin-top:50px; width: 100%; display: flex;flex-direction: column;align-items: center;font-size: 1.8rem;">
+                    <h1>Find your dream Job</h1>
+                    <!-- <p>Search</p> -->
+                  </div>
+                </div>
+          
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-3">
+                      <select name="" id="" style="width: 100%; border-radius: 5px;min-height: 48px;"
+                        [(ngModel)]="_selectedCountry" (ngModelChange)="getLocations()">
+                        <option value="">Choose country</option>
+                        <option *ngFor="let country of countries" [ngValue]="country.name">{{country.name}}</option>
+          
+                      </select>
+                    </div>
+                    <div class="col-md-3">
+                      <select name="" id="" style="width: 100%; border-radius: 5px;min-height: 48px;"
+                      [(ngModel)]="_selectedLocation">
+                        <option value="">Choose location</option>
+                        <option *ngFor="let location of locationsForSelectedCountries" [ngValue]="location">{{location}}</option>
+                      </select>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-md-10">
+                          <mat-expansion-panel >
+                            <mat-expansion-panel-header>
+                              <mat-panel-title>Categories</mat-panel-title>
+          
+          
+                            </mat-expansion-panel-header>
+                            <section id="categoriesSection" style="max-height: 350px; overflow-y: auto;">
+                              <div *ngFor="let category of jobcategories; let i=index" >
+                                <input id={{category.categoryname}} [(checked)]="category.selected" type="checkbox"
+                                  (change)="selectCategory(i)">
+                                <label for={{category.categoryname}}>{{category.categoryname}}</label>
+                              </div>
+          
+          
+                            </section>
+          
+                          </mat-expansion-panel>
+                        </div>
+                        <div class="col-md-2">
+                          <button class="btn btn-primary searchBtn" style="min-height: 48px;" (click)="search()">Search</button>
+                        </div>
+                      </div>
+          
+          
+          
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+        </div>
+
+        
+
+    </div>
+</section>
+<app-footer></app-footer>
